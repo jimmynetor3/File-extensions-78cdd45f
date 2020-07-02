@@ -1,7 +1,8 @@
 <?php
+
 $input = $argv[1];
 $pattern = '/[A-Z]{1,}/m';
-if (preg_match($pattern,$input,$matches)) {
+if (preg_match($pattern, $input, $matches)) {
     $newstring = preg_replace_callback(
         $pattern,
         function ($matches) {
@@ -10,6 +11,6 @@ if (preg_match($pattern,$input,$matches)) {
         $input
     );
     echo $newstring;
-}else{
+} else {
     echo("nothing to change");
 }
